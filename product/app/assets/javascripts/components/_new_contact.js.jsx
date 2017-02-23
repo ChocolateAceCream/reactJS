@@ -13,11 +13,11 @@ var NewContact = React.createClass({
     },
     render() {
         return (
-            <div>
-                    <input ref='name' placeholder='Name of Contact' />
-                    <input ref='phone' placeholder='Phone Number' />
-                <button onClick={this.handleClick}>Submit</button>
-            </div>
+            <tr style={{marginBottom : '50px'}}>
+             <td>  <input ref='name' placeholder='Name of Contact' /> </td>
+             <td>  <input ref='phone' placeholder='Phone Number' /></td>
+             <td>  <button type="button" className="btn btn-primary"  onClick={this.handleClick}>Submit</button></td>
+            </tr>
         )
     }
 });

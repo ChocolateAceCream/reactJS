@@ -44,15 +44,15 @@ var Contact = React.createClass({
     },
 
     render() {
-        var name = this.state.editable ? <input type='text' ref='name' defaultValue={this.props.contact.name} /> : <h3>{this.props.contact.name}</h3>;
-        var phone = this.state.editable ? <input type='text' ref='phone' defaultValue={this.props.contact.phone} />: <p>{this.props.contact.phone}</p>;
+        var name = this.state.editable ? <td><input type='text' ref='name' defaultValue={this.props.contact.name} /></td> : <td>{this.props.contact.name}</td>;
+        var phone = this.state.editable ? <td><input type='text' ref='phone' defaultValue={this.props.contact.phone} /></td>: <td>{this.props.contact.phone}</td>;
         return (
-            <div>
+                <tr>
                 {name}
                 {phone}
-                <button onClick={this.props.handleDelete} >Delete</button>
-                <button onClick={this.handleEdit}> {this.state.editable ? 'Submit' : 'Edit' } </button>
-            </div>
+                <td> <button className="btn btn-danger btn-xs" onClick={this.props.handleDelete} >Delete</button>
+<button className="btn btn-info btn-xs" onClick={this.handleEdit}> {this.state.editable ? 'Submit' : 'Edit' } </button></td>
+            </tr>
         )
     }
 });

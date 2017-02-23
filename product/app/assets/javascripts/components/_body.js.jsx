@@ -51,7 +51,7 @@ var Body = React.createClass({
 	render() {
 		return (
 			<div>
-				<NewContact handleSubmit={this.handleSubmit} />
+				<NewContact style={{color: "red"}} handleSubmit={this.handleSubmit} />
 				<AllContacts contacts = {this.state.contacts} ahandleDelete = {this.bhandleDelete} onUpdate={this.handleUpdate}/>
 			</div>
 		)

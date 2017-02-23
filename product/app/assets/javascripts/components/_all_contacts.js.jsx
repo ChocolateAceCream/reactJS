@@ -39,20 +39,27 @@ var AllContacts = React.createClass({
     },
 
     render() {
-            var contacts= this.props.contacts.map((contact) => {
-                return (
-                    <div key={contact.id}>
-                        <Contact contact={contact}
-                              handleDelete={this.handleDelete.bind(this, contact.id)}
-                              handleUpdate={this.onUpdate}/>
-                    </div>
-                )
-            });
+        var contacts= this.props.contacts.map((contact) => {
+            return (
+                <tbody key={contact.id}>
+                    <Contact  contact={contact}
+                        handleDelete={this.handleDelete.bind(this, contact.id)}
+                        handleUpdate={this.onUpdate}/>
+                </tbody>
+            )
+        });
 
         return(
-            <div>
-                {contacts}
-            </div>
+            <table className="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                    {contacts}
+            </table>
         )
     }
 });
